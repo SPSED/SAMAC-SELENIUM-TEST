@@ -23,6 +23,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "menu", catalog = "project", uniqueConstraints = @UniqueConstraint(columnNames = "nom_menu"))
 public class Menu implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idMenu;
 	private Etape etape;
 	private String nomMenu;
@@ -52,7 +56,7 @@ public class Menu implements java.io.Serializable {
 		this.idMenu = idMenu;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "num_etape")
 	public Etape getEtape() {
 		return this.etape;
@@ -71,7 +75,7 @@ public class Menu implements java.io.Serializable {
 		this.nomMenu = nomMenu;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "menu")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "menu")
 	public Set<Champ> getChamps() {
 		return this.champs;
 	}

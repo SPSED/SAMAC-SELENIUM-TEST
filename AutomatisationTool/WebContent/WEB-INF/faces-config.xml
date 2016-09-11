@@ -10,15 +10,60 @@
 	
 	<!--       From choixSejourCamembert.jsp           -->
 	<navigation-rule>
-		<from-view-id>/pages/client/choixSejourCamembert.jsp</from-view-id>
+		<from-view-id>/pages/champNew.jsp</from-view-id>
 		<navigation-case>
-			<from-outcome>showCamembert</from-outcome>
-			<to-view-id>/pages/client/camembert.jsp</to-view-id>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/success.jsp</to-view-id>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>return</from-outcome>
-			<to-view-id>/pages/client/accueilClient.jsp</to-view-id>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/pages/failure.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	
+	<navigation-rule>
+		<from-view-id>/pages/champEdit.jsp</from-view-id>
+	<navigation-case>
+			<from-outcome>table</from-outcome>
+			<to-view-id>/pages/table.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+		
+	<navigation-rule>
+		<from-view-id>/pages/success3.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>table</from-outcome>
+			<to-view-id>/pages/table.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+
+	
+	<navigation-rule>
+		<from-view-id>/pages/testNew.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/success.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/pages/failure.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<navigation-rule>
+		<from-view-id>/pages/table.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/champEdit.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detail</from-outcome>
+			<to-view-id>/pages/champDetail.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/success2.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

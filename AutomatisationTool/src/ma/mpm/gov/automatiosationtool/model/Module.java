@@ -21,6 +21,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "module", catalog = "project", uniqueConstraints = @UniqueConstraint(columnNames = "nom_module"))
 public class Module implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idModule;
 	private String nomModule;
 	private Set<Etape> etapes = new HashSet<Etape>(0);
@@ -57,7 +61,7 @@ public class Module implements java.io.Serializable {
 		this.nomModule = nomModule;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "module")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "module")
 	public Set<Etape> getEtapes() {
 		return this.etapes;
 	}

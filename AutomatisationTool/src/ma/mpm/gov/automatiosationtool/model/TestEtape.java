@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "test_etape", catalog = "project")
 public class TestEtape implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private TestEtapeId id;
 	private Test test;
 	private Etape etape;
@@ -26,6 +30,16 @@ public class TestEtape implements java.io.Serializable {
 
 	public TestEtape() {
 	}
+	
+	
+	//crée manuellement
+	public TestEtape(Test test, Etape etape) {
+		super();
+		this.test = test;
+		this.etape = etape;
+	}
+
+
 
 	public TestEtape(TestEtapeId id, Test test, Etape etape) {
 		this.id = id;
@@ -52,7 +66,7 @@ public class TestEtape implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_test", nullable = false, insertable = false, updatable = false)
 	public Test getTest() {
 		return this.test;
@@ -62,7 +76,7 @@ public class TestEtape implements java.io.Serializable {
 		this.test = test;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "num_etape", nullable = false, insertable = false, updatable = false)
 	public Etape getEtape() {
 		return this.etape;

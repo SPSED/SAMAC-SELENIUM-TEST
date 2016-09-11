@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "champ", catalog = "project")
 public class Champ implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idChamp;
 	private Etape etape;
 	private Menu menu;
@@ -62,7 +66,7 @@ public class Champ implements java.io.Serializable {
 		this.idChamp = idChamp;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "num_etape")
 	public Etape getEtape() {
 		return this.etape;
@@ -72,7 +76,7 @@ public class Champ implements java.io.Serializable {
 		this.etape = etape;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_menu")
 	public Menu getMenu() {
 		return this.menu;
@@ -82,7 +86,7 @@ public class Champ implements java.io.Serializable {
 		this.menu = menu;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_action", nullable = false)
 	public Action getAction() {
 		return this.action;
@@ -92,7 +96,7 @@ public class Champ implements java.io.Serializable {
 		this.action = action;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_type", nullable = false)
 	public TypeChamp getTypeChamp() {
 		return this.typeChamp;
@@ -102,7 +106,7 @@ public class Champ implements java.io.Serializable {
 		this.typeChamp = typeChamp;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_selecteur", nullable = false)
 	public Selecteur getSelecteur() {
 		return this.selecteur;

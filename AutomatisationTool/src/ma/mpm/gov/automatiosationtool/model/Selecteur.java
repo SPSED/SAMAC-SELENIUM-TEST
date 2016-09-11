@@ -21,6 +21,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "selecteur", catalog = "project", uniqueConstraints = @UniqueConstraint(columnNames = "type_selecteur"))
 public class Selecteur implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idSelecteur;
 	private String typeSelecteur;
 	private Set<Champ> champs = new HashSet<Champ>(0);
@@ -57,7 +61,7 @@ public class Selecteur implements java.io.Serializable {
 		this.typeSelecteur = typeSelecteur;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "selecteur")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "selecteur")
 	public Set<Champ> getChamps() {
 		return this.champs;
 	}

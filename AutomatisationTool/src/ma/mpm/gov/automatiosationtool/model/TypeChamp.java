@@ -21,6 +21,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "type_champ", catalog = "project", uniqueConstraints = @UniqueConstraint(columnNames = "nom_type"))
 public class TypeChamp implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idType;
 	private String nomType;
 	private Set<Champ> champs = new HashSet<Champ>(0);
@@ -53,7 +57,7 @@ public class TypeChamp implements java.io.Serializable {
 		this.nomType = nomType;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "typeChamp")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "typeChamp")
 	public Set<Champ> getChamps() {
 		return this.champs;
 	}

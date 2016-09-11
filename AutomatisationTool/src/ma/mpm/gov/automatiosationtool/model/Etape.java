@@ -22,6 +22,10 @@ import javax.persistence.Table;
 @Table(name = "etape", catalog = "project")
 public class Etape implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer numEtape;
 	private Module module;
 	private String nomEtape;
@@ -52,7 +56,7 @@ public class Etape implements java.io.Serializable {
 		this.numEtape = numEtape;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_module")
 	public Module getModule() {
 		return this.module;
@@ -71,7 +75,7 @@ public class Etape implements java.io.Serializable {
 		this.nomEtape = nomEtape;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "etape")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "etape")
 	public Set<Menu> getMenus() {
 		return this.menus;
 	}
@@ -80,7 +84,7 @@ public class Etape implements java.io.Serializable {
 		this.menus = menus;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "etape")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "etape")
 	public Set<Champ> getChamps() {
 		return this.champs;
 	}
@@ -89,7 +93,7 @@ public class Etape implements java.io.Serializable {
 		this.champs = champs;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "etape")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "etape")
 	public Set<TestEtape> getTestEtapes() {
 		return this.testEtapes;
 	}
