@@ -1,76 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13268362751710" configfile="/CarnetDeVoyage/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/gererActivite" x="338" y="1186" id="pf13270531907383" referenceLink="//@navigationRule.9/@navigationCase.1/@toViewId|" outlinks="pf13271368372697 pf13271368372698 pf13271368372699 pf132713683726910" inlinks="pf13271368372699 pf132713683726910 pf132713683726911 pf132713683726912 pf132713683726913 pf132713683726914" path="/pages/admin/gererActivite.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/gererDomaine" x="338" y="370" id="pf132713683726919" referenceLink="//@navigationRule.8/@navigationCase.1/@toViewId|" outlinks="pf132713683726920 pf132713683726921" inlinks="pf132713683726922 pf132713683726923 pf132713683726924 pf13272498131532" path="/pages/admin/gererDomaine.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/ajouterDomaine" x="122" y="178" id="pf132713683726925" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf132713683726922 pf13272498131532" inlinks="pf132713683726920" path="/pages/admin/ajouterDomaine.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/modifierDomaine" x="122" y="562" id="pf132713683727026" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf132713683726923 pf132713683726924" inlinks="pf132713683726921" path="/pages/admin/modifierDomaine.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/ajouterActivite" x="122" y="994" id="pf132713683727027" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf132713683726911 pf132713683726912" inlinks="pf13271368372697" path="/pages/admin/ajouterActivite.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/modifierActivite" x="122" y="1378" id="pf132713683727028" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf132713683726913 pf132713683726914" inlinks="pf13271368372698" path="/pages/admin/modifierActivite.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/gererAdmin" x="338" y="802" id="pf132713683727029" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf132713683727030" path="/pages/admin/gererAdmin.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/ajouterAdmin" x="554" y="1186" id="pf132713683727031" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf13272498131533" inlinks="pf132713683727030" path="/pages/admin/ajouterAdmin.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/modifierAdmin" x="554" y="418" id="pf132713683727032" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf132713705509239 pf132713705509240" path="/pages/admin/modifierAdmin.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/accueilAdmin" x="770" y="802" id="pf132713705509241" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf132713705509239 pf132713705509240 pf132713705509242 pf132715874312776 pf13272498131533" path="/pages/admin/accueilAdmin.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/listerClient" x="554" y="802" id="pf132713705509243" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf132713705509242" path="/pages/admin/listerClient.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/connexion" x="554" y="1570" id="pf132713730458949" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" outlinks="pf132715874312776 pf132715874312777" inlinks="pf132715880107081 pf132715893381183" path="/pages/admin/connexion.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/accueilClient" x="770" y="2540" id="pf132713766395757" referenceLink="//@navigationRule.22/@navigationCase.1/@toViewId|" inlinks="pf132715874312777 pf132734048296012 pf13274054448220 pf13274402752000 pf13274403597267" path="/pages/client/accueilClient.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/planification" x="122" y="2296" id="pf132714650363162" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf132714650363163" path="/pages/admin/planification.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/admin/accueilClient" x="338" y="2338" id="pf132714650363164" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf132714650363163" path="/pages/admin/accueilClient.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/creerCompte" x="338" y="1954" id="pf132715779011068" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf132715893381183 pf132715931442384" path="/pages/client/creerCompte.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="*" x="338" y="1570" id="pf132715880107082" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf132715880107081" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/compteEstCree" x="554" y="2338" id="pf132715931442485" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf132715931442384" path="/pages/client/compteEstCree.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/ajouterSejour" x="122" y="2680" id="pf132716569335688" referenceLink="//@navigationRule.14/@fromViewId|" outlinks="pf13272515475055 pf13274402752000" path="/pages/client/ajouterSejour.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/planification" x="554" y="3127" id="pf132716569335690" referenceLink="//@navigationRule.16/@fromViewId|" outlinks="pf13272515475056" inlinks="pf13272524125767" path="/pages/client/planification.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/choixDomainPlanification" x="338" y="2919" id="pf13272515475054" referenceLink="//@navigationRule.16/@navigationCase.0/@toViewId|" outlinks="pf13272524125767 pf13273384162758" inlinks="pf13272515475055 pf13272515475056" path="/pages/client/choixDomainPlanification.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/terminerPlanification" x="554" y="2743" id="pf13273384162759" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf132734048296012" inlinks="pf13273384162758" path="/pages/client/terminerPlanification.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/accueil" x="122" y="3064" id="pf132733979923911" referenceLink="//@navigationRule.17/@navigationCase.0/@toViewId|" path="/pages/client/accueilClient.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/camembert" x="554" y="1954" id="pf13274054448232" referenceLink="//@navigationRule.22/@navigationCase.0/@toViewId|" outlinks="pf13274054448220" inlinks="pf13274403370944" path="/pages/client/camembert.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/listerSejour" x="122" y="3448" id="pf13274054448233" referenceLink="//@navigationRule.19/@fromViewId|" outlinks="pf13274054448234" path="/pages/client/listerSejour.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/notePlanification" x="338" y="3832" id="pf13274054448235" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" outlinks="pf13274054448236" inlinks="pf13274054448234 pf13274054448237" path="/pages/client/notePlanification.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/redigerNote" x="122" y="3832" id="pf13274054448238" referenceLink="//@navigationRule.21/@fromViewId|" outlinks="pf13274054448237" inlinks="pf13274054448236" path="/pages/client/redigerNote.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/client/choixSejourCamembert" id="pf13274403370945" referenceLink="//@navigationRule.22/@fromViewId|" outlinks="pf13274403370944 pf13274403597267" path="/pages/client/choixSejourCamembert.jsp"/>
-  <links id="pf132713683726920" target="pf132713683726925" source="pf132713683726919" outcome="add"/>
-  <links id="pf132713683726921" target="pf132713683727026" source="pf132713683726919" outcome="modifier"/>
-  <links id="pf13271368372697" target="pf132713683727027" source="pf13270531907383" outcome="add"/>
-  <links id="pf13271368372698" target="pf132713683727028" source="pf13270531907383" outcome="modifierActivite"/>
-  <links id="pf132713683727030" target="pf132713683727031" source="pf132713683727029" outcome="add"/>
-  <links id="pf132713683726922" target="pf132713683726919" source="pf132713683726925" outcome="domaineAddedSuccess"/>
-  <links id="pf132713683726911" target="pf13270531907383" source="pf132713683727027" outcome="activiteAddedSuccess"/>
-  <links id="pf132713683726912" target="pf13270531907383" source="pf132713683727027" outcome="return"/>
-  <links id="pf132713683726923" target="pf132713683726919" source="pf132713683727026" outcome="return"/>
-  <links id="pf132713683726924" target="pf132713683726919" source="pf132713683727026" outcome="domaineModifiedSuccess"/>
-  <links id="pf132713683726913" target="pf13270531907383" source="pf132713683727028" outcome="return"/>
-  <links id="pf132713683726914" target="pf13270531907383" source="pf132713683727028" outcome="activiteModifiedSuccess"/>
-  <links id="pf132713705509239" target="pf132713705509241" source="pf132713683727032" outcome="userModifiedSuccess"/>
-  <links id="pf132713705509240" target="pf132713705509241" source="pf132713683727032" outcome="return"/>
-  <links id="pf132713705509242" target="pf132713705509241" source="pf132713705509243" outcome="return"/>
-  <links id="pf132714650363163" target="pf132714650363164" source="pf132714650363162" outcome="sejourAddedSuccess"/>
-  <links id="pf132715874312776" target="pf132713705509241" source="pf132713730458949" outcome="LoginOK_Admin" redirect="true"/>
-  <links id="pf132715874312777" target="pf132713766395757" source="pf132713730458949" outcome="LoginOK_Client" redirect="true"/>
-  <links id="pf132715880107081" target="pf132713730458949" source="pf132715880107082" outcome="userDeconnect"/>
-  <links id="pf132715893381183" target="pf132713730458949" source="pf132715779011068" outcome="returnConnexion"/>
-  <links id="pf132715931442384" target="pf132715931442485" source="pf132715779011068" outcome="userAddedSuccess"/>
-  <links id="pf13272498131532" target="pf132713683726919" source="pf132713683726925" outcome="return"/>
-  <links id="pf13272498131533" target="pf132713705509241" source="pf132713683727031" outcome="return"/>
-  <links id="pf13272515475055" target="pf13272515475054" source="pf132716569335688" outcome="SejourToPlanification"/>
-  <links id="pf13272524125767" target="pf132716569335690" source="pf13272515475054" outcome="choixDomaine"/>
-  <links id="pf13272515475056" target="pf13272515475054" source="pf132716569335690" outcome="planificationAddedSuccess"/>
-  <links id="pf13273384162758" target="pf13273384162759" source="pf13272515475054" outcome="terminerPlanification"/>
-  <links id="pf132734048296012" target="pf132713766395757" source="pf13273384162759" outcome="return"/>
-  <links id="pf13274054448220" target="pf132713766395757" source="pf13274054448232" outcome="return"/>
-  <links id="pf13274054448234" target="pf13274054448235" source="pf13274054448233" outcome="noter"/>
-  <links id="pf13274054448236" target="pf13274054448238" source="pf13274054448235" outcome="rediger"/>
-  <links id="pf13274054448237" target="pf13274054448235" source="pf13274054448238" outcome="modifier"/>
-  <links id="pf13274402752000" target="pf132713766395757" source="pf132716569335688" outcome="return"/>
-  <links id="pf13271368372699" target="pf13270531907383" source="pf13270531907383" outcome="activiteModifiedSuccess">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13268362751710" configfile="/AutomatisationTool/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/gererActivite" x="122" y="178" id="pf13270531907383" referenceLink="//@navigationRule.9/@navigationCase.1/@toViewId|" path="/pages/admin/gererActivite.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/gererDomaine" x="122" y="563" id="pf132713683726919" referenceLink="//@navigationRule.8/@navigationCase.1/@toViewId|" path="/pages/admin/gererDomaine.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/ajouterDomaine" x="122" y="949" id="pf132713683726925" referenceLink="//@navigationRule.5/@fromViewId|" path="/pages/admin/ajouterDomaine.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/modifierDomaine" x="122" y="1336" id="pf132713683727026" referenceLink="//@navigationRule.8/@fromViewId|" path="/pages/admin/modifierDomaine.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/ajouterActivite" x="122" y="2108" id="pf132713683727027" referenceLink="//@navigationRule.6/@fromViewId|" path="/pages/admin/ajouterActivite.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/modifierActivite" x="122" y="2492" id="pf132713683727028" referenceLink="//@navigationRule.9/@fromViewId|" path="/pages/admin/modifierActivite.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/gererAdmin" x="122" y="2876" id="pf132713683727029" referenceLink="//@navigationRule.4/@fromViewId|" path="/pages/admin/gererAdmin.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/ajouterAdmin" x="122" y="3260" id="pf132713683727031" referenceLink="//@navigationRule.7/@fromViewId|" path="/pages/admin/ajouterAdmin.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/modifierAdmin" x="122" y="3644" id="pf132713683727032" referenceLink="//@navigationRule.10/@fromViewId|" path="/pages/admin/modifierAdmin.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/accueilAdmin" x="122" y="4028" id="pf132713705509241" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" path="/pages/admin/accueilAdmin.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/listerClient" x="122" y="4412" id="pf132713705509243" referenceLink="//@navigationRule.11/@fromViewId|" path="/pages/admin/listerClient.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/connexion" x="122" y="4796" id="pf132713730458949" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" path="/pages/admin/connexion.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/accueilClient" x="122" y="5180" id="pf132713766395757" referenceLink="//@navigationRule.22/@navigationCase.1/@toViewId|" path="/pages/client/accueilClient.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/planification" x="122" y="5564" id="pf132714650363162" referenceLink="//@navigationRule.12/@fromViewId|" path="/pages/admin/planification.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/admin/accueilClient" x="122" y="5948" id="pf132714650363164" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" path="/pages/admin/accueilClient.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/creerCompte" x="122" y="6332" id="pf132715779011068" referenceLink="//@navigationRule.13/@fromViewId|" path="/pages/client/creerCompte.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="6716" id="pf132715880107082" referenceLink="//@navigationRule.1/@fromViewId|" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/compteEstCree" x="122" y="7100" id="pf132715931442485" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" path="/pages/client/compteEstCree.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/ajouterSejour" x="122" y="7484" id="pf132716569335688" referenceLink="//@navigationRule.14/@fromViewId|" path="/pages/client/ajouterSejour.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/planification" x="122" y="7868" id="pf132716569335690" referenceLink="//@navigationRule.16/@fromViewId|" path="/pages/client/planification.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/choixDomainPlanification" x="122" y="8636" id="pf13272515475054" referenceLink="//@navigationRule.16/@navigationCase.0/@toViewId|" path="/pages/client/choixDomainPlanification.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/terminerPlanification" x="122" y="9020" id="pf13273384162759" referenceLink="//@navigationRule.17/@fromViewId|" path="/pages/client/terminerPlanification.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/accueil" x="122" y="9404" id="pf132733979923911" referenceLink="//@navigationRule.17/@navigationCase.0/@toViewId|" path="/pages/client/accueilClient.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/camembert" x="122" y="9788" id="pf13274054448232" referenceLink="//@navigationRule.22/@navigationCase.0/@toViewId|" path="/pages/client/camembert.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/listerSejour" x="122" y="10172" id="pf13274054448233" referenceLink="//@navigationRule.19/@fromViewId|" path="/pages/client/listerSejour.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/notePlanification" x="122" y="10556" id="pf13274054448235" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" path="/pages/client/notePlanification.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/redigerNote" x="122" y="10940" id="pf13274054448238" referenceLink="//@navigationRule.21/@fromViewId|" path="/pages/client/redigerNote.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/client/choixSejourCamembert" x="122" y="11324" id="pf13274403370945" referenceLink="//@navigationRule.22/@fromViewId|" path="/pages/client/choixSejourCamembert.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/champNew" x="554" y="7848" id="pf14736112247940" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf147361482778621 pf147361488932423" inlinks="pf14736112247943 pf147361488932423" path="/pages/champNew.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/failure" x="338" y="1916" id="pf14736112247946" referenceLink="//@navigationRule.5/@navigationCase.1/@toViewId|" inlinks="pf14736112247947" path="/pages/failure.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/champEdit" x="986" y="8050" id="pf14736112247948" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" outlinks="pf14736112247949" inlinks="pf147361122479410" path="/pages/champEdit.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/table" x="770" y="8050" id="pf147361122479411" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" outlinks="pf147361122479410 pf147361122479412 pf14736416026720 pf14736416026721" inlinks="pf14736112247949 pf147361122479414 pf147361122479415 pf147361482778621" path="/pages/table.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/success3" x="554" y="7464" id="pf147361122479416" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf147361122479414" path="/pages/success3.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/gestionChamp" x="338" y="8050" id="pf147361122479417" referenceLink="//@navigationRule.6/@navigationCase.3/@toViewId|" outlinks="pf147361122479415 pf14736112247943" inlinks="pf14736416026722 pf14736416026721" path="/pages/gestionChamp.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/testNew" x="122" y="1724" id="pf147361122479418" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf14736112247947 pf14736416026723" inlinks="pf14736416026723" path="/pages/testNew.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/champDetail" x="986" y="8434" id="pf147361122479419" referenceLink="//@navigationRule.6/@navigationCase.1/@toViewId|" inlinks="pf147361122479412" path="/pages/champDetail.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/success2" x="122" y="11708" id="pf147361122479420" referenceLink="//@navigationRule.5/@navigationCase.2/@toViewId|" path="/pages/success2.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/delete" x="122" y="8252" id="pf14736416026724" referenceLink="//@navigationRule.6/@navigationCase.2/@toViewId|" outlinks="pf14736416026722" inlinks="pf14736416026720" path="/pages/delete.jsp"/>
+  <links id="pf14736112247949" target="pf147361122479411" source="pf14736112247948" outcome="table"/>
+  <links id="pf147361122479414" target="pf147361122479411" source="pf147361122479416" outcome="table"/>
+  <links id="pf147361122479415" target="pf147361122479411" source="pf147361122479417" outcome="table"/>
+  <links id="pf14736112247947" target="pf14736112247946" source="pf147361122479418" outcome="failure"/>
+  <links id="pf147361122479410" target="pf14736112247948" source="pf147361122479411" outcome="edit"/>
+  <links id="pf147361122479412" target="pf147361122479419" source="pf147361122479411" outcome="detail"/>
+  <links id="pf14736112247943" target="pf14736112247940" source="pf147361122479417" outcome="new"/>
+  <links id="pf147361482778621" target="pf147361122479411" source="pf14736112247940" outcome="table"/>
+  <links id="pf14736416026722" target="pf147361122479417" source="pf14736416026724" outcome="home"/>
+  <links id="pf14736416026720" target="pf14736416026724" source="pf147361122479411" outcome="delete"/>
+  <links id="pf14736416026721" target="pf147361122479417" source="pf147361122479411" outcome="home"/>
+  <links id="pf147361488932423" target="pf14736112247940" source="pf14736112247940" outcome="new">
     <bendPoints d1Height="-36" d2Height="-36"/>
     <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
     <bendPoints d1Width="-64" d2Width="-64"/>
   </links>
-  <links id="pf132713683726910" target="pf13270531907383" source="pf13270531907383" outcome="activiteDeletedSuccess">
-    <bendPoints d1Height="-66" d2Height="-66"/>
-    <bendPoints d1Width="-94" d1Height="-66" d2Width="-94" d2Height="-66"/>
-    <bendPoints d1Width="-94" d2Width="-94"/>
-  </links>
-  <links id="pf13274403370944" target="pf13274054448232" source="pf13274403370945" outcome="showCamembert"/>
-  <links id="pf13274403597267" target="pf132713766395757" source="pf13274403370945" outcome="return"/>
+  <links id="pf14736416026723" target="pf147361122479418" source="pf147361122479418" outcome="new"/>
 </pageflow:Pageflow>
