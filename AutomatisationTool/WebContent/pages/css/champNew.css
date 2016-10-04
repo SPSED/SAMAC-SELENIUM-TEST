@@ -1,0 +1,45 @@
+
+body {
+    background-color: zhite;
+    padding:auto;
+    margin:50px;
+    background: #495C70;
+    color:white;
+}
+#submit{
+
+}
+
+#img{
+	position: absolute;
+    left: 850px;
+}
+
+#s1,#s2,#s3,#s4,#s5,#s6,#s7,#s8,#s9,#submit{
+	
+	position: absolute;
+    left: 580px;
+}
+#t{
+position: absolute;
+    left: 5px;}
+#img{
+	color:#FDC507;
+	position: absolute;
+    left: 850px;
+    top:70px;
+}
+form{
+	padding:40px;
+	border-style: dotted;
+	margin-left:25%;
+	margin-right:35%;
+	}
+.form-style-2-heading{
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 25px;
+    padding-bottom: 3px;
+}

@@ -1,11 +1,16 @@
 package ma.mpm.gov.automatiosationtool.controllers;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +44,12 @@ public class ChampController implements Serializable{
 	private Champ champ;
 	private  Module module;
 	private int idmodule;
+	private String nommodule;
 	private Etape etape;
 	private int numetape;
+	private String nometape;
 	private Menu menu;
+	private String nommenu;
 	private int idmenu;
 	private TypeChamp typeChamp;
 	private int idtype;
@@ -52,6 +60,7 @@ public class ChampController implements Serializable{
     private String valeurSelecteur;
 	private String contexte;
 	private String texte;
+	private Date texteDate;
 	
 	@Autowired
 	private GestionEtape gEtape;
@@ -84,7 +93,7 @@ public class ChampController implements Serializable{
 	List<SelectItem> selectItemsSelecteur= new ArrayList<SelectItem>();
 	
 	public ChampController() {
-		super();
+		super(); 
 	}
 	
 	@PostConstruct
@@ -146,7 +155,6 @@ public class ChampController implements Serializable{
 			selectItemsSelecteur.add( new SelectItem(listSelecteurs.get(i).getIdSelecteur(), listSelecteurs.get(i).getTypeSelecteur()));
 		}
 	}
-	
 
 	//ajax
 	
@@ -157,7 +165,6 @@ public class ChampController implements Serializable{
 	}
 	public void chargerEtape2(){
 		selectItemsEtape=new ArrayList<SelectItem>(); 
-		System.out.println(champ.getEtape().getModule().getIdModule());
 		listEtapes=gEtape.findAll(champ.getEtape().getModule().getIdModule());
 		initSelectItems2();
 	}
@@ -181,11 +188,9 @@ public class ChampController implements Serializable{
 			initSelectItems3();}
 		}
 	
-	
 	//navigation
 	
 	public String delete(Champ c){
-		System.out.println(c.getIdChamp());
 		gChamp.delete(c);		
 		listChamps=gChamp.findAll();
 
@@ -197,8 +202,12 @@ public class ChampController implements Serializable{
 		if(champ.getMenu()==null){
 			Menu m=new Menu();
 			m.setIdMenu(0);
-			champ.setMenu(m);
-		}
+			champ.setMenu(m);}
+			
+			listEtapes=gEtape.findAll(champ.getEtape().getModule().getIdModule());
+			initSelectItems2();
+			listMenus=gMenu.findAll(champ.getEtape().getNumEtape());
+			chargerMenu2();		
 		return "edit";
 	}
 	
@@ -213,26 +222,61 @@ public class ChampController implements Serializable{
 		gChamp.saveorupdate(champ);
 		listChamps=gChamp.findAll();
 		return "table";
-			
 		}
 	
 	public String table(){
 		return "table";
 	}
 	   public String add(){
-		   String s="failure";
+		   String message;
 		   etape=gEtape.getById(numetape);
 		   if(idmenu==0)  menu=null;
 		   else           menu=gMenu.getById(idmenu);
 		   action=gAction.getById(idaction);
 		   typeChamp=gTypeChamp.getById(idtype);
 		   selecteur=gSelecteur.getById(idselecteur);
+		   if(typeChamp.getNomType().equals("date")){
+/*			   Date date = new Date();
+			   date=(Date)texte;*/
+		   }
 		   champ=new Champ(etape,menu,action,typeChamp,selecteur,valeurSelecteur,texte,contexte);
-		   if( gChamp.saveorupdate(champ))s="success";
-		   else s="failure";
-		return s;
+		   if( gChamp.saveorupdate(champ)){
+			   message = "Votre champ a été ajouté avec succés !!"; 
+		   }
+		   else {message="Erreur lors de la création de votre champ";}
+		    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(message)); 
+
+		return "new";
 	   }
-	
+	   
+	   public static Date stringToDate(String date) {
+	        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	        try {
+	            return dateFormat.parse(date);
+	        } catch (ParseException e) {
+	            return null;
+	        }
+	    }
+	   
+	   public static String dateToString(Date date) {
+	        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	        return dateFormat.format(date);
+	    }
+	   
+	    public String find (){
+	    	listChamps=gChamp.findBy(nommodule, nometape, nommenu, texte);
+	    	texte="";
+	    	return "table";
+	    }
+	  
+	    public String neww(){
+	    	return "new";
+	    }
+	    public String home(){
+	    	return "home";
+	    }
+	    
+	   //typeChamp functions
 	   public boolean isTypeDate2(){
 			if(champ.getTypeChamp().getIdType()==3) {
 				return true;
@@ -250,16 +294,6 @@ public class ChampController implements Serializable{
 		public TimeZone getTimeZone() {
 	        return TimeZone.getDefault();
 	    }    
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -540,4 +574,38 @@ public class ChampController implements Serializable{
 
 	public void setIdselecteur(int idselecteur) {
 		this.idselecteur = idselecteur;
-	}}
+	}
+
+	public String getNommodule() {
+		return nommodule;
+	}
+
+	public void setNommodule(String nommodule) {
+		this.nommodule = nommodule;
+	}
+
+	public String getNometape() {
+		return nometape;
+	}
+
+	public void setNometape(String nometape) {
+		this.nometape = nometape;
+	}
+
+	public String getNommenu() {
+		return nommenu;
+	}
+
+	public void setNommenu(String nommenu) {
+		this.nommenu = nommenu;
+	}
+
+	public Date getTexteDate() {
+		return texteDate;
+	}
+
+	public void setTexteDate(Date texteDate) {
+		this.texteDate = texteDate;
+	}
+	
+}

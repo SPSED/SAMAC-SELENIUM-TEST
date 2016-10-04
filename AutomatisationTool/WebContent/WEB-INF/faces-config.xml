@@ -8,16 +8,15 @@
 	</application>
 	
 	
-	<!--       From choixSejourCamembert.jsp           -->
 	<navigation-rule>
 		<from-view-id>/pages/champNew.jsp</from-view-id>
 		<navigation-case>
-			<from-outcome>success</from-outcome>
-			<to-view-id>/pages/success.jsp</to-view-id>
+			<from-outcome>new</from-outcome>
+			<to-view-id>/pages/champNew.jsp</to-view-id>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>failure</from-outcome>
-			<to-view-id>/pages/failure.jsp</to-view-id>
+			<from-outcome>table</from-outcome>
+			<to-view-id>/pages/table.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	
@@ -29,6 +28,7 @@
 		</navigation-case>
 		</navigation-rule>
 		
+
 	<navigation-rule>
 		<from-view-id>/pages/success3.jsp</from-view-id>
 		<navigation-case>
@@ -37,12 +37,56 @@
 		</navigation-case>
 		</navigation-rule>
 
+   <navigation-rule>
+		<from-view-id>/pages/gestionChamp.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>table</from-outcome>
+			<to-view-id>/pages/table.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>new</from-outcome>
+			<to-view-id>/pages/champNew.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+		
+		 <navigation-rule>
+		<from-view-id>/pages/delete.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionChamp.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+	
+		 <navigation-rule>
+		<from-view-id>/pages/champNew.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionChamp.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+	
+		 <navigation-rule>
+		<from-view-id>/pages/champDetail.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionChamp.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+		
+			 <navigation-rule>
+		<from-view-id>/pages/champEdit.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionChamp.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+		
 	
 	<navigation-rule>
 		<from-view-id>/pages/testNew.jsp</from-view-id>
 		<navigation-case>
-			<from-outcome>success</from-outcome>
-			<to-view-id>/pages/success.jsp</to-view-id>
+			<from-outcome>new</from-outcome>
+			<to-view-id>/pages/testNew.jsp</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>failure</from-outcome>
@@ -63,7 +107,11 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>delete</from-outcome>
-			<to-view-id>/pages/success2.jsp</to-view-id>
+			<to-view-id>/pages/delete.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionChamp.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

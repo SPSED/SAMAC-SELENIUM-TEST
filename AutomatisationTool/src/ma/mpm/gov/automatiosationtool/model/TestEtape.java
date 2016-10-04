@@ -31,15 +31,6 @@ public class TestEtape implements java.io.Serializable {
 	public TestEtape() {
 	}
 	
-	
-	//crée manuellement
-	public TestEtape(Test test, Etape etape) {
-		super();
-		this.test = test;
-		this.etape = etape;
-	}
-
-
 
 	public TestEtape(TestEtapeId id, Test test, Etape etape) {
 		this.id = id;

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#pages#champNew.jsp"
+  PATH="/pages/champNew.jsp" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#champNew.jsp:0" NAME="item"
+   PATH="/pages/champNew.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="new::#pages#champNew.jsp" NAME="output"
+    PATH="/pages/champNew.jsp" TARGET="rules:#pages#champNew.jsp"
+    TITLE="new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="table::#pages#table.jsp" NAME="output1"
+    PATH="/pages/table.jsp" TARGET="rules:#pages#table.jsp"
+    TITLE="table" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#champNew.jsp:1" NAME="item1"
+   PATH="/pages/champNew.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionChamp.jsp" NAME="output"
+    PATH="/pages/gestionChamp.jsp"
+    TARGET="rules:#pages#gestionChamp.jsp" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#failure.jsp" PATH="/pages/failure.jsp"
+  SHAPE="256,289,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#testNew.jsp" PATH="/pages/testNew.jsp"
+  SHAPE="32,273,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#testNew.jsp:0" NAME="item"
+   PATH="/pages/testNew.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="new::#pages#testNew.jsp" NAME="output"
+    PATH="/pages/testNew.jsp" TARGET="rules:#pages#testNew.jsp"
+    TITLE="new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="failure::#pages#failure.jsp" NAME="output1"
+    PATH="/pages/failure.jsp" TARGET="rules:#pages#failure.jsp"
+    TITLE="failure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#table.jsp" PATH="/pages/table.jsp"
+  SHAPE="32,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#table.jsp:0" NAME="item"
+   PATH="/pages/table.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#champEdit.jsp" NAME="output"
+    PATH="/pages/champEdit.jsp" TARGET="rules:#pages#champEdit.jsp"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="detail::#pages#champDetail.jsp"
+    NAME="output1" PATH="/pages/champDetail.jsp"
+    TARGET="rules:#pages#champDetail.jsp" TITLE="detail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#delete.jsp" NAME="output2"
+    PATH="/pages/delete.jsp" TARGET="rules:#pages#delete.jsp"
+    TITLE="delete" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionChamp.jsp"
+    NAME="output3" PATH="/pages/gestionChamp.jsp"
+    TARGET="rules:#pages#gestionChamp.jsp" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#champEdit.jsp"
+  PATH="/pages/champEdit.jsp" SHAPE="272,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#champEdit.jsp:0" NAME="item"
+   PATH="/pages/champEdit.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="table::#pages#table.jsp" NAME="output"
+    PATH="/pages/table.jsp" TARGET="rules:#pages#table.jsp"
+    TITLE="table" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#champEdit.jsp:1" NAME="item1"
+   PATH="/pages/champEdit.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionChamp.jsp" NAME="output"
+    PATH="/pages/gestionChamp.jsp"
+    TARGET="rules:#pages#gestionChamp.jsp" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#champDetail.jsp"
+  PATH="/pages/champDetail.jsp" SHAPE="256,577,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#champDetail.jsp:0" NAME="item"
+   PATH="/pages/champDetail.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionChamp.jsp" NAME="output"
+    PATH="/pages/gestionChamp.jsp"
+    TARGET="rules:#pages#gestionChamp.jsp" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#success3.jsp"
+  PATH="/pages/success3.jsp" SHAPE="480,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#success3.jsp:0" NAME="item"
+   PATH="/pages/success3.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="table::#pages#table.jsp" NAME="output"
+    PATH="/pages/table.jsp" TARGET="rules:#pages#table.jsp"
+    TITLE="table" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#gestionChamp.jsp"
+  PATH="/pages/gestionChamp.jsp" SHAPE="64,593,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#gestionChamp.jsp:0" NAME="item"
+   PATH="/pages/gestionChamp.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="table::#pages#table.jsp" NAME="output"
+    PATH="/pages/table.jsp" TARGET="rules:#pages#table.jsp"
+    TITLE="table" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="new::#pages#champNew.jsp" NAME="output1"
+    PATH="/pages/champNew.jsp" TARGET="rules:#pages#champNew.jsp"
+    TITLE="new" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#delete.jsp" PATH="/pages/delete.jsp"
+  SHAPE="336,641,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#delete.jsp:0" NAME="item"
+   PATH="/pages/delete.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionChamp.jsp" NAME="output"
+    PATH="/pages/gestionChamp.jsp"
+    TARGET="rules:#pages#gestionChamp.jsp" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

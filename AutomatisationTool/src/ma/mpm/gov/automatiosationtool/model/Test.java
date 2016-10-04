@@ -28,6 +28,7 @@ public class Test implements java.io.Serializable {
 	private Integer idTest;
 	private String description;
 	private String nomTest;
+	public String date;
 	private Set<TestEtape> testEtapes = new HashSet<TestEtape>(0);
 
 	public Test() {
@@ -68,13 +69,20 @@ public class Test implements java.io.Serializable {
 		this.nomTest = nomTest;
 	}
 
+	@Column(name = "date")
+	public String getDate() {
+		return date;
+	}
 
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
+	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "test")
 	public Set<TestEtape> getTestEtapes() {
 		return this.testEtapes;
 	}
-
-	
 
 	public void setTestEtapes(Set<TestEtape> testEtapes) {
 		this.testEtapes = testEtapes;

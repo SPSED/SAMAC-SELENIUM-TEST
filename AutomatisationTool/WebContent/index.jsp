@@ -6,7 +6,7 @@
 
 try
 {
-		response.sendRedirect(response.encodeRedirectURL("./pages/table.jsf")); 
+		response.sendRedirect(response.encodeRedirectURL("./pages/gestionChamp.jsf")); 
 		
 
 
