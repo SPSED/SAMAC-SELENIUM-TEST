@@ -5,7 +5,7 @@
 <%@ taglib prefix="a4j" uri="http://richfaces.org/a4j" %>
 <%@ taglib prefix="rich" uri="http://richfaces.org/rich" %>
 
-<head><title>Ajouter un Test</title>
+<head><title>Modifier un Test</title>
  <link href="css/champNew.css" rel="stylesheet" type="text/css"  />
 </head>
 <body>
@@ -18,33 +18,18 @@
 						Accueil</span>
 				</h:commandLink>
 			</div>
-			<div class="form-style-2-heading">Ajouter un test</div>
+			<div class="form-style-2-heading">Modification du test</div>
 		
 			   	<h:outputLabel value="Nom du test  " /><span id="s4">
-		<h:inputText value="#{testController.nom}"/></span>
+		<h:inputText value="#{testController.test.nomTest}"/></span>
 					   <br/><br/>
 		
 		    <h:outputLabel value="Description" /><span id="s9">	    
-		<h:inputText value="#{testController.description}"/></span>
+		<h:inputText value="#{testController.test.description}"/></span>
 					<br/><br/>
-		
-		
-		<h:outputLabel  value="Module" /> <span id="s1">
-		<h:selectOneMenu   value="#{testController.idmodule}" >
-				<f:selectItems   value="#{testController.selectItemsModule}" />
-				<a4j:support event="onchange" reRender="listeEtapes" action="#{testController.chargerEtape}"/>
-    	</h:selectOneMenu></span>
-			   <br/><br/>
-	
-		   <h:outputLabel value="Etape  " />	
-		 <span id="s2">
-		<h:selectOneMenu   value="#{testController.numetape}" id="listeEtapes">
-				<f:selectItems   value="#{testController.selectItemsEtape}" />		
-		</h:selectOneMenu>	   </span>
-		
-	
-		 <br/><br/><br/><span id="submit">
-	    <h:commandButton value="Ajouter" action="#{testController.neww}"/>
+
+		<br/><span id="submit">
+	    <h:commandButton value="Modifier" action="#{testController.edit}"/>
 	    </span><br/><br/>
 	    <h:messages  globalOnly="true" style="color:yellow" />
 	</h:form>

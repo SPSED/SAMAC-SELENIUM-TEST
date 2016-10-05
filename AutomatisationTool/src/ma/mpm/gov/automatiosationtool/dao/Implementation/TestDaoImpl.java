@@ -34,7 +34,27 @@ public class TestDaoImpl implements TestDao{
 	            return theTests;
 	            }
 	     
-	     
+		 public List<Test> findBy(String module, String etape, String test){
+			 StringBuilder query = new StringBuilder("from Test t where 1=1");
+
+				if (test != null && !test.isEmpty()) {
+					query.append(" and t.nomTest ='" + test + "'");
+				}
+				 if (etape != null) {
+					query.append(" and test.nomTest= c..nomEtape ='" + etape + "'");
+				}
+
+				else if (module != null) {
+					query.append(" and c.etape.module.nomModule ='" + module + "'");
+				}
+
+				query.append(" order by idTest");
+				@SuppressWarnings("unchecked")
+				List<Test> result = factory.getCurrentSession().createQuery(query.toString()).list();
+
+				return result;
+		 }
+ 
 	     public void delete(Test a)
 	     {
 	      factory.getCurrentSession().delete(a);

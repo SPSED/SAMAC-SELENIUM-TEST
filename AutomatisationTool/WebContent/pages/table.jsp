@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib  uri="http://richfaces.org/rich" prefix="rich" %>
-<head><title>Tables des Champs</title>
+<head><title>Tables des tests</title>
 <link href="css/table.css" rel="stylesheet" type="text/css"  /> 
 </head>
 <body>

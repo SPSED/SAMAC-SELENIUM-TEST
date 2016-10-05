@@ -13,5 +13,6 @@ public interface GestionTest {
      public void delete(Test a);
 	 public void saveorupdate(Test a);
 	 public Test getById(int i);
+	 public List<Test> findBy(String nommodule, String nometape, String nomtest);
 	    
 }

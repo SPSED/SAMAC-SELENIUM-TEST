@@ -32,5 +32,10 @@ public class GestionTestImpl implements GestionTest{
      public GestionTestImpl(){
      	
      }
+
+	public List<Test> findBy(String nommodule, String nometape, String nomtest) {
+		act.findBy(nommodule, nometape, nomtest);
+		return null;
+	}
 }
 

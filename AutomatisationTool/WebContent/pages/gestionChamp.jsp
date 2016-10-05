@@ -18,20 +18,35 @@
  					    <h:graphicImage  value="images/add.png" width="40px" />
  						</h:commandLink>  </div> 	
 
-<br/><br/>
+		<br/><br/>
 		<h:outputLabel  value="Module  "  /> <span id="s1">
-		<h:inputText value="#{champController.nommodule}"/></span>
+			<h:selectOneMenu   value="#{champController.idmodule}" >
+				<f:selectItems   value="#{champController.selectItemsModule}" />
+				<a4j:support event="onchange" reRender="listeEtapes" action="#{champController.chargerEtape}"/>
+    	</h:selectOneMenu></span>
 			   <br/><br/>
 	
-		   <h:outputLabel value="Etape  " />	
-		 <span id="s2">
-		<h:inputText value="#{champController.nometape}"/> </span>
+		   <h:outputLabel value="Etape  " /><span id="s2">
+			<h:selectOneMenu   value="#{champController.numetape}" id="listeEtapes">
+				<f:selectItems   value="#{champController.selectItemsEtape}" />		
+	   <a4j:support event="onchange" reRender="listeMenus" action="#{champController.chargerMenu}"/>
+		</h:selectOneMenu></span>
 		
+			 <br/><br/>
+		   <h:outputLabel value="Contexte  " /><span id="s3">   
+		<h:selectOneMenu value="#{champController.contexte}">
+		<f:selectItem itemLabel="pre-traitement" itemValue="pre-traitement" />
+		<f:selectItem itemLabel="traitement" itemValue="traitement" />
+		<f:selectItem itemLabel="validation" itemValue="validation" />
+        <a4j:support event="onchange" reRender="listeMenus" action="#{champController.chargerMenu}"/>
+		</h:selectOneMenu></span>
 	
 		   <br/><br/>
 		   
 	   	<h:outputLabel value="Menu  " /><span id="s4">
-		<h:inputText value="#{champController.nommenu}"/></span>
+		<h:selectOneMenu  id="listeMenus" value="#{champController.idmenu}" >
+				<f:selectItems   value="#{champController.selectItemsMenu}" />				
+		</h:selectOneMenu></span>
 	
 		<br/><br/>
 		

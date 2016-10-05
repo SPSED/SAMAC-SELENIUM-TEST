@@ -28,6 +28,50 @@
 		</navigation-case>
 		</navigation-rule>
 		
+	<navigation-rule>
+		<from-view-id>/pages/testNew.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionTest.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+		
+		<navigation-rule>
+		<from-view-id>/pages/testEdit.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>table</from-outcome>
+			<to-view-id>/pages/tableTests.jsp</to-view-id>
+		</navigation-case>
+			<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionTest.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+		
+		<navigation-rule>
+		<from-view-id>/pages/tableTests.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionTest.jsp</to-view-id>
+		</navigation-case>
+			<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/testEdit.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+		
+	<navigation-rule>
+		<from-view-id>/pages/gestionTest.jsp</from-view-id>
+	    <navigation-case>
+			<from-outcome>table</from-outcome>
+			<to-view-id>/pages/tableTests.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>new</from-outcome>
+			<to-view-id>/pages/testNew.jsp</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+
 
 	<navigation-rule>
 		<from-view-id>/pages/success3.jsp</from-view-id>
@@ -94,7 +138,17 @@
 		</navigation-case>
 	</navigation-rule>
 	
-	
+	<navigation-rule>
+		<from-view-id>/pages/Accueil.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>champ</from-outcome>
+			<to-view-id>/pages/gestionChamp.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>test</from-outcome>
+			<to-view-id>/pages/gestionTest.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	<navigation-rule>
 		<from-view-id>/pages/table.jsp</from-view-id>
 		<navigation-case>

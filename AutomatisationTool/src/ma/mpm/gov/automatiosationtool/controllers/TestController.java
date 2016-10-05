@@ -18,7 +18,9 @@ import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionEtape;
 import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionModule;
 import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionTest;
 import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionTestEtape;
+import ma.mpm.gov.automatiosationtool.model.Champ;
 import ma.mpm.gov.automatiosationtool.model.Etape;
+import ma.mpm.gov.automatiosationtool.model.Menu;
 import ma.mpm.gov.automatiosationtool.model.Module;
 import ma.mpm.gov.automatiosationtool.model.Test;
 import ma.mpm.gov.automatiosationtool.model.TestEtape;
@@ -47,17 +49,25 @@ public class TestController {
 	private int idtest;
 	private int idmodule;
 	private int numetape;
+	private String nomtest;
+	private String nommodule;
+	private String nometape;
+	
+	private Test test;
 	
 	private List<Module> listModules;
 	private List<Etape> listEtapes;
-	
+	private List<Test> listTests;
+
 	List<SelectItem> selectItemsEtape = new ArrayList<SelectItem>(); 
 	List<SelectItem> selectItemsModule = new ArrayList<SelectItem>(); 
+
 
 	@PostConstruct
 	public void init (){
 		listModules=gModule.findAll();
 		listEtapes=gEtape.findAll(1);
+		listTests=gTest.findAll();
 		initSelectItems();
 		initSelectItems2();
 
@@ -73,12 +83,51 @@ public class TestController {
 			selectItemsEtape.add( new SelectItem(listEtapes.get(i).getNumEtape(), listEtapes.get(i).getNomEtape()));
 		}
 	}
+	
+	
 	public void chargerEtape(){
 		selectItemsEtape=new ArrayList<SelectItem>(); 
 		listEtapes=gEtape.findAll(idmodule);
 		initSelectItems2();
 	}
 	
+	public String find (){
+    	nommodule=gModule.getById(idmodule).getNomModule();
+    	nometape=gEtape.getById(numetape).getNomEtape();
+    	listTests=gTest.findBy(nommodule, nometape, nomtest);
+    	return "table";
+    }
+
+	   public String neww(){
+	    	return "new";
+	    }
+	   public String home(){
+	    	return "home";
+	    }
+		public String champ(){
+			return "champ";
+		}
+		public String test(){
+			 return "test";
+		}
+	   public String edit(){
+		   
+			gTest.saveorupdate(test);
+			listTests=gTest.findAll();
+			return "table";
+			
+	   }
+	   
+	   public String edit(Test t){
+			test=t;
+			
+				
+	/*			listEtapes=gEtape.findAll(champ.getEtape().getModule().getIdModule());
+				initSelectItems2();*/
+			
+			return "edit";
+		}
+	   
 	   public String add(){
 		   String s="new";
 		   
@@ -198,7 +247,37 @@ public class TestController {
 	public void setSelectItemsModule(List<SelectItem> selectItemsModule) {
 		this.selectItemsModule = selectItemsModule;
 	}
+	public List<Test> getListTests() {
+		return listTests;
+	}
+	public void setListTests(List<Test> listTests) {
+		this.listTests = listTests;
+	}
+	public String getNomtest() {
+		return nomtest;
+	}
+	public void setNomtest(String nomtest) {
+		this.nomtest = nomtest;
+	}
 
+	public Test getTest() {
+		return test;
+	}
+	public void setTest(Test test) {
+		this.test = test;
+	}
+	public String getNommodule() {
+		return nommodule;
+	}
+	public void setNommodule(String nommodule) {
+		this.nommodule = nommodule;
+	}
+	public String getNometape() {
+		return nometape;
+	}
+	public void setNometape(String nometape) {
+		this.nometape = nometape;
+	}
 	
 	
 }

@@ -49,15 +49,15 @@ public class ChampDaoImpl implements ChampDao {
 		if (texte != null && !texte.isEmpty()) {
 			query.append(" and c.texte ='" + texte + "'");
 		}
-		if (menu != null && !menu.isEmpty()) {
+		if (menu != null && !"pas de menu".equals(menu)) {
 
 			query.append(" and c.menu.nomMenu ='" + menu + "'");
 		}
-		else if (etape != null && !etape.isEmpty()) {
+		else if (etape != null) {
 			query.append(" and c.etape.nomEtape ='" + etape + "'");
 		}
 
-		else if (module != null && !module.isEmpty()) {
+		else if (module != null) {
 			query.append(" and c.etape.module.nomModule ='" + module + "'");
 		}
 

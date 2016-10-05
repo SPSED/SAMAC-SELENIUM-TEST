@@ -224,6 +224,13 @@ public class ChampController implements Serializable{
 		return "table";
 		}
 	
+	public String champ(){
+		return "champ";
+	}
+	public String test(){
+		return "test";
+	}
+	
 	public String table(){
 		return "table";
 	}
@@ -235,11 +242,9 @@ public class ChampController implements Serializable{
 		   action=gAction.getById(idaction);
 		   typeChamp=gTypeChamp.getById(idtype);
 		   selecteur=gSelecteur.getById(idselecteur);
-		   if(typeChamp.getNomType().equals("date")){
-/*			   Date date = new Date();
-			   date=(Date)texte;*/
-		   }
+		    texte=texteDate.toString();
 		   champ=new Champ(etape,menu,action,typeChamp,selecteur,valeurSelecteur,texte,contexte);
+		   texte="";
 		   if( gChamp.saveorupdate(champ)){
 			   message = "Votre champ a été ajouté avec succés !!"; 
 		   }
@@ -264,6 +269,9 @@ public class ChampController implements Serializable{
 	    }
 	   
 	    public String find (){
+	    	nommodule=gModule.getById(idmodule).getNomModule();
+	    	nometape=gEtape.getById(numetape).getNomEtape();
+	    	nommenu=gMenu.getById(idmenu).getNomMenu();
 	    	listChamps=gChamp.findBy(nommodule, nometape, nommenu, texte);
 	    	texte="";
 	    	return "table";
@@ -275,6 +283,8 @@ public class ChampController implements Serializable{
 	    public String home(){
 	    	return "home";
 	    }
+	    
+	    
 	    
 	   //typeChamp functions
 	   public boolean isTypeDate2(){
@@ -294,6 +304,9 @@ public class ChampController implements Serializable{
 		public TimeZone getTimeZone() {
 	        return TimeZone.getDefault();
 	    }    
+		
+		
+		
 		
 		
 		

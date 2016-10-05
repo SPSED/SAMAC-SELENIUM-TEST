@@ -13,5 +13,5 @@ public interface TestDao {
      public void delete(Test a);
      public Test getById(int i );
      public void saveorupdate(Test a);
-
+	 public List<Test> findBy(String module, String etape, String test);
 }

@@ -24,6 +24,12 @@
   SHAPE="32,273,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#pages#testNew.jsp:0" NAME="item"
    PATH="/pages/testNew.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionTest.jsp" NAME="output"
+    PATH="/pages/gestionTest.jsp" TARGET="rules:#pages#gestionTest.jsp"
+    TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#testNew.jsp:1" NAME="item1"
+   PATH="/pages/testNew.jsp" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="new::#pages#testNew.jsp" NAME="output"
     PATH="/pages/testNew.jsp" TARGET="rules:#pages#testNew.jsp"
     TITLE="new" model-entity="JSFProcessItemOutput"/>
@@ -102,6 +108,54 @@
    <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionChamp.jsp" NAME="output"
     PATH="/pages/gestionChamp.jsp"
     TARGET="rules:#pages#gestionChamp.jsp" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#gestionTest.jsp"
+  PATH="/pages/gestionTest.jsp" SHAPE="96,657,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#gestionTest.jsp:0" NAME="item"
+   PATH="/pages/gestionTest.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="table::#pages#tableTests.jsp" NAME="output"
+    PATH="/pages/tableTests.jsp" TARGET="rules:#pages#tableTests.jsp"
+    TITLE="table" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="new::#pages#testNew.jsp" NAME="output1"
+    PATH="/pages/testNew.jsp" TARGET="rules:#pages#testNew.jsp"
+    TITLE="new" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#tableTests.jsp"
+  PATH="/pages/tableTests.jsp" SHAPE="240,929,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#tableTests.jsp:0" NAME="item"
+   PATH="/pages/tableTests.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionTest.jsp" NAME="output"
+    PATH="/pages/gestionTest.jsp" TARGET="rules:#pages#gestionTest.jsp"
+    TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#testEdit.jsp" NAME="output1"
+    PATH="/pages/testEdit.jsp" TARGET="rules:#pages#testEdit.jsp"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#testEdit.jsp"
+  PATH="/pages/testEdit.jsp" SHAPE="512,1169,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#testEdit.jsp:0" NAME="item"
+   PATH="/pages/testEdit.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="table::#pages#tableTests.jsp" NAME="output"
+    PATH="/pages/tableTests.jsp" TARGET="rules:#pages#tableTests.jsp"
+    TITLE="table" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionTest.jsp" NAME="output1"
+    PATH="/pages/gestionTest.jsp" TARGET="rules:#pages#gestionTest.jsp"
+    TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#Accueil.jsp" PATH="/pages/Accueil.jsp"
+  SHAPE="96,945,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#Accueil.jsp:0" NAME="item"
+   PATH="/pages/Accueil.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="champ::#pages#gestionChamp.jsp"
+    NAME="output" PATH="/pages/gestionChamp.jsp"
+    TARGET="rules:#pages#gestionChamp.jsp" TITLE="champ" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="test::#pages#gestionTest.jsp" NAME="output1"
+    PATH="/pages/gestionTest.jsp" TARGET="rules:#pages#gestionTest.jsp"
+    TITLE="test" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
 </PROCESS>
