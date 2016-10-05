@@ -28,14 +28,6 @@
 		</navigation-case>
 		</navigation-rule>
 		
-	<navigation-rule>
-		<from-view-id>/pages/testNew.jsp</from-view-id>
-		<navigation-case>
-			<from-outcome>home</from-outcome>
-			<to-view-id>/pages/gestionTest.jsp</to-view-id>
-		</navigation-case>
-		</navigation-rule>
-		
 		<navigation-rule>
 		<from-view-id>/pages/testEdit.jsp</from-view-id>
 		<navigation-case>
@@ -135,6 +127,10 @@
 		<navigation-case>
 			<from-outcome>failure</from-outcome>
 			<to-view-id>/pages/failure.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/pages/gestionTest.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	

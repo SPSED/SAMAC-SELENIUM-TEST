@@ -44,7 +44,7 @@
 		
 	
 		 <br/><br/><br/><span id="submit">
-	    <h:commandButton value="Ajouter" action="#{testController.neww}"/>
+	    <h:commandButton value="Ajouter" action="#{testController.add}"/>
 	    </span><br/><br/>
 	    <h:messages  globalOnly="true" style="color:yellow" />
 	</h:form>

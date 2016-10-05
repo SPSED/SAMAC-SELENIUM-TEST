@@ -24,12 +24,6 @@
   SHAPE="32,273,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#pages#testNew.jsp:0" NAME="item"
    PATH="/pages/testNew.jsp" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="home::#pages#gestionTest.jsp" NAME="output"
-    PATH="/pages/gestionTest.jsp" TARGET="rules:#pages#gestionTest.jsp"
-    TITLE="home" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#pages#testNew.jsp:1" NAME="item1"
-   PATH="/pages/testNew.jsp" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="new::#pages#testNew.jsp" NAME="output"
     PATH="/pages/testNew.jsp" TARGET="rules:#pages#testNew.jsp"
     TITLE="new" model-entity="JSFProcessItemOutput"/>

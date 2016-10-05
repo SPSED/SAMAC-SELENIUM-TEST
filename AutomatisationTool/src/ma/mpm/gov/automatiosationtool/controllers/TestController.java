@@ -129,8 +129,7 @@ public class TestController {
 		}
 	   
 	   public String add(){
-		   String s="new";
-		   
+		   		   
 		   Date dNow = new Date( );
 		   SimpleDateFormat ft = new SimpleDateFormat ("yyyy.MM.dd");
 		   
@@ -143,15 +142,16 @@ public class TestController {
 			
 			int t=test.getIdTest();
 			System.out.println(numetape);
-		for(int i=1; i <= numetape ; i++){
+			gTestEtape.saveorupdate( new TestEtape(new TestEtapeId(t,numetape),test,gEtape.getById(numetape)));
+
+		/*for(int i=1; i <= numetape ; i++){
 			gTestEtape.saveorupdate( new TestEtape(new TestEtapeId(t,i),test,gEtape.getById(i)));
-		}
+		}*/
 		
-	//	test.setTestEtapes(testEtapes);
-		
+	
 		 String message = "Votre test a été créé avec succés !!";
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(message)); 
-		return s;
+		return "new";
 	   }
  
 	   //getters and setters
