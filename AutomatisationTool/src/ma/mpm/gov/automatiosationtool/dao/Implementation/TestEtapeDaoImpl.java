@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ma.mpm.gov.automatiosationtool.dao.Interface.TestEtapeDao;
+import ma.mpm.gov.automatiosationtool.model.Test;
 import ma.mpm.gov.automatiosationtool.model.TestEtape;
 
 
@@ -35,7 +36,12 @@ public class TestEtapeDaoImpl implements TestEtapeDao{
           return theTestEtapes;
           }
    
-   
+   @SuppressWarnings("unchecked")
+public TestEtape getBy(Test t){
+	   List<TestEtape> theTestEtapes =  factory.getCurrentSession().createQuery("from TestEtape E where E.test=:var").setParameter("var",t).list();
+          return theTestEtapes.get(0);
+         					    }
+
    public void delete(TestEtape a)
    {
     factory.getCurrentSession().delete(a);

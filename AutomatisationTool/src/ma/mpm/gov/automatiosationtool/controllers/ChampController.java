@@ -42,6 +42,7 @@ public class ChampController implements Serializable{
 
 	
 	private Champ champ;
+	private int idchamp;
 	private  Module module;
 	private int idmodule;
 	private String nommodule;
@@ -61,6 +62,7 @@ public class ChampController implements Serializable{
 	private String contexte;
 	private String texte;
 	private Date texteDate;
+	private String libelle;
 	
 	@Autowired
 	private GestionEtape gEtape;
@@ -84,6 +86,7 @@ public class ChampController implements Serializable{
 	private List<Selecteur> listSelecteurs;
 	private List<Action> listActions;
 	private List<Champ> listChamps; 
+
 	
 	List<SelectItem> selectItemsModule = new ArrayList<SelectItem>(); 
 	List<SelectItem> selectItemsEtape  = new ArrayList<SelectItem>(); 
@@ -91,7 +94,8 @@ public class ChampController implements Serializable{
 	List<SelectItem> selectItemsType   = new ArrayList<SelectItem>();
 	List<SelectItem> selectItemsAction = new ArrayList<SelectItem>();
 	List<SelectItem> selectItemsSelecteur= new ArrayList<SelectItem>();
-	
+	List<SelectItem> selectItemsChamp= new ArrayList<SelectItem>();
+
 	public ChampController() {
 		super(); 
 	}
@@ -105,7 +109,8 @@ public class ChampController implements Serializable{
 		listActions=gAction.findAll();
 		listSelecteurs=gSelecteur.findAll();
 		listChamps=gChamp.findAll();
-		initSelectItems();
+/*		gChamp.increase(99);
+*/		initSelectItems();
 		initSelectItems2();
 		initSelectItems3();
 		initSelectItems5();
@@ -155,25 +160,34 @@ public class ChampController implements Serializable{
 			selectItemsSelecteur.add( new SelectItem(listSelecteurs.get(i).getIdSelecteur(), listSelecteurs.get(i).getTypeSelecteur()));
 		}
 	}
-
-	//ajax
+	
+	public void initSelectItems8() {
+		for(int i=0; i < listChamps.size() ; i++){
+			selectItemsChamp.add( new SelectItem(listChamps.get(i).getIdChamp(), listChamps.get(i).getLibelle()));
+		}
+	}
+	//ajax 
 	
 	public void chargerEtape(){
 		selectItemsEtape=new ArrayList<SelectItem>(); 
 		listEtapes=gEtape.findAll(idmodule);
 		initSelectItems2();
 	}
+
 	public void chargerEtape2(){
 		selectItemsEtape=new ArrayList<SelectItem>(); 
 		listEtapes=gEtape.findAll(champ.getEtape().getModule().getIdModule());
 		initSelectItems2();
 	}
+	
 	public void chargerMenu(){
 		chargermenu(numetape,contexte);
 	}
+	
 	public void chargerMenu2(){
 		chargermenu(champ.getEtape().getNumEtape(),champ.getContexte());
 	}
+	
 	public void chargermenu(int num,String cont){
 		
 		if(gMenu.findAll(num).size()==0){
@@ -188,6 +202,12 @@ public class ChampController implements Serializable{
 			initSelectItems3();}
 		}
 	
+	public void chargerChamps(){
+		selectItemsChamp=new ArrayList<SelectItem>(); 
+		listChamps=gChamp.findBy(idmenu);
+		System.out.println(listChamps.size());
+		initSelectItems8();
+	}
 	//navigation
 	
 	public String delete(Champ c){
@@ -234,20 +254,28 @@ public class ChampController implements Serializable{
 	public String table(){
 		return "table";
 	}
-	   public String add(){
-		   String message;
-		   etape=gEtape.getById(numetape);
-		   if(idmenu==0)  menu=null;
-		   else           menu=gMenu.getById(idmenu);
-		   action=gAction.getById(idaction);
-		   typeChamp=gTypeChamp.getById(idtype);
-		   selecteur=gSelecteur.getById(idselecteur);
-		    texte=texteDate.toString();
-		   champ=new Champ(etape,menu,action,typeChamp,selecteur,valeurSelecteur,texte,contexte);
-		   texte="";
-		   if( gChamp.saveorupdate(champ)){
-			   message = "Votre champ a été ajouté avec succés !!"; 
-		   }
+	   public String add1(){
+		etape = gEtape.getById(numetape);
+		action = gAction.getById(idaction);
+		typeChamp = gTypeChamp.getById(idtype);
+		selecteur = gSelecteur.getById(idselecteur);
+		if (texteDate != null) {
+			texte = texteDate.toString();
+		}
+		if (idmenu == 0) {
+			menu = null;
+			
+		} else {
+			menu = gMenu.getById(idmenu);
+			champ = new Champ(etape, menu, action, typeChamp, selecteur, valeurSelecteur, texte, contexte, libelle);
+		}
+
+		String message;
+		libelle = "";
+		texte = "";
+		if (gChamp.saveorupdate(champ)) {
+			message = "Votre champ a été ajouté avec succés !!";
+		}
 		   else {message="Erreur lors de la création de votre champ";}
 		    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(message)); 
 
@@ -271,9 +299,13 @@ public class ChampController implements Serializable{
 	    public String find (){
 	    	nommodule=gModule.getById(idmodule).getNomModule();
 	    	nometape=gEtape.getById(numetape).getNomEtape();
+	    	if(idmenu!=0)
 	    	nommenu=gMenu.getById(idmenu).getNomMenu();
-	    	listChamps=gChamp.findBy(nommodule, nometape, nommenu, texte);
-	    	texte="";
+	    	else{
+	    		nommenu=null;
+	    	}
+	    	listChamps=gChamp.findBy(nommodule, nometape, nommenu,libelle);
+	    	libelle="";
 	    	return "table";
 	    }
 	  
@@ -283,10 +315,13 @@ public class ChampController implements Serializable{
 	    public String home(){
 	    	return "home";
 	    }
+	    public String display(){
+	    	listChamps=gChamp.findAll();
+	    	return "display";
+	    }
 	    
 	    
-	    
-	   //typeChamp functions
+	   //rendred functions
 	   public boolean isTypeDate2(){
 			if(champ.getTypeChamp().getIdType()==3) {
 				return true;
@@ -301,6 +336,13 @@ public class ChampController implements Serializable{
 				return false;
 			}
 	    }
+	   public boolean isMenu(){
+				if(idmenu!=0) {
+					return true;
+				} else {
+					return false;
+				}
+		    }
 		public TimeZone getTimeZone() {
 	        return TimeZone.getDefault();
 	    }    
@@ -619,6 +661,30 @@ public class ChampController implements Serializable{
 
 	public void setTexteDate(Date texteDate) {
 		this.texteDate = texteDate;
+	}
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+	public List<SelectItem> getSelectItemsChamp() {
+		return selectItemsChamp;
+	}
+
+	public void setSelectItemsChamp(List<SelectItem> selectItemsChamp) {
+		this.selectItemsChamp = selectItemsChamp;
+	}
+
+	public int getIdchamp() {
+		return idchamp;
+	}
+
+	public void setIdchamp(int idchamp) {
+		this.idchamp = idchamp;
 	}
 	
 }

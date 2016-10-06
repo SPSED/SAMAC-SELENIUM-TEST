@@ -75,6 +75,5 @@
    
    </h:dataTable>
  		<br/>										
-<h:outputText value="Table is empty" rendered="#{empty champController.listChamps}"/>
 </h:form>
 </f:view></body>

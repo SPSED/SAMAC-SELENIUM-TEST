@@ -23,11 +23,15 @@
 			</div>
 
 			<div class="form-style-2-heading">Ajout d'un champ</div>
-		
+			
+		<h:outputLabel value="libelle" /><span id="s10">	    
+		<h:inputText value="#{champController.libelle}"/></span>
+					<br/><br/>
+					
 		<h:outputLabel  value="Module  "  /> <span id="s1">
 		<h:selectOneMenu   value="#{champController.idmodule}" >
 				<f:selectItems   value="#{champController.selectItemsModule}" />
-				<a4j:support event="onchange" reRender="listeEtapes" action="#{champController.chargerEtape}"/>
+				<a4j:support event="onchange" reRender="listeEtapes,listeMenus" action="#{champController.chargerEtape}"/>
     	</h:selectOneMenu></span>
 			   <br/><br/>
 	
@@ -45,17 +49,27 @@
 		<f:selectItem itemLabel="pre-traitement" itemValue="pre-traitement" />
 		<f:selectItem itemLabel="traitement" itemValue="traitement" />
 		<f:selectItem itemLabel="validation" itemValue="validation" />
-        <a4j:support event="onchange" reRender="listeMenus" action="#{champController.chargerMenu}"/>
+        <a4j:support event="onchange" reRender="listeMenus,listeChamps" action="#{champController.chargerMenu}"/>
 		</h:selectOneMenu></span>
 	
 		   <br/><br/>
 		   
 	   	<h:outputLabel value="Menu  " /><span id="s4">
 		<h:selectOneMenu  id="listeMenus" value="#{champController.idmenu}" >
-				<f:selectItems   value="#{champController.selectItemsMenu}" />				
+				<f:selectItems   value="#{champController.selectItemsMenu}" />	
+				<a4j:support event="onchange" reRender="listeChamps" action="#{champController.chargerChamps}" /> 
+							
 		</h:selectOneMenu></span>
 	
 		<br/><br/>
+		
+		  	<h:outputLabel value="Aprés  " /><span id="s4"> <%-- rendered="#{champController.isMenu}" --%> 
+		<h:selectOneMenu id="listeChamps" value="#{champController.idchamp}" >
+				<f:selectItems   value="#{champController.selectItemsChamp}" />				
+		</h:selectOneMenu></span>
+	
+		<br/><br/>
+		
      	<h:outputLabel value="Type de champ" /><span id="s5">	    
 		<h:selectOneMenu value="#{champController.idtype}">
 			<f:selectItems   value="#{champController.selectItemsType}" />		
@@ -88,7 +102,8 @@
 	                   <br/><br/>
 	    <h:outputLabel value="Valeur du Selecteur" /><span id="s9">	    
 		<h:inputText value="#{champController.valeurSelecteur}"/></span>
-					<br/><br/><br/>
+					<br/><br/>
+		<br/>
 		<span id="submit">
 	    <h:commandButton value="Valider" action="#{champController.add}" style="background:#FDC507" />
 	    

@@ -7,15 +7,16 @@ body {
     color:white;
 }
 #submit{
-
 }
 
 #img{
 	position: absolute;
     left: 850px;
 }
-
-#s1,#s2,#s3,#s4,#s5,#s6,#s7,#s8,#s9,#submit{
+#l
+{margin-right:25px;
+}
+#s1,#s2,#s3,#s4,#s5,#s6,#s7,#s8,#s9,#s10,#submit{
 	
 	position: absolute;
     left: 580px;

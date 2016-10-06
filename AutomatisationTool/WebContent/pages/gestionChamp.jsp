@@ -50,12 +50,14 @@
 	
 		<br/><br/>
 		
-		<h:outputLabel value="Valeur du champ" /><span id="s6">
-		<h:inputText value="#{champController.texte}"/>
+		<h:outputLabel value="Libellé" /><span id="s6">
+		<h:inputText value="#{champController.libelle}"/>
 		</span>
 					<br/><br/><br/>
 		<span id="submit">
-	    <h:commandButton value="Valider" action="#{champController.find}"/>
+	    <h:commandButton value="Rechercher" action="#{champController.find}"/>
+	     <span id="l"> </span>
+	    <h:commandButton value="Afficher tout" action="#{champController.display}"/>
 	    </span>
 	</h:form>
                     

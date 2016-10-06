@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import ma.mpm.gov.automatiosationtool.dao.Interface.TestEtapeDao;
 import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionTestEtape;
+import ma.mpm.gov.automatiosationtool.model.Test;
 import ma.mpm.gov.automatiosationtool.model.TestEtape;
 
 @Service
@@ -33,6 +34,9 @@ public class GestionTestEtapeImpl implements GestionTestEtape{
     }
      public GestionTestEtapeImpl(){
      	
+     }
+     public TestEtape getBy(Test t){
+     return act.getBy(t);
      }
 }
 

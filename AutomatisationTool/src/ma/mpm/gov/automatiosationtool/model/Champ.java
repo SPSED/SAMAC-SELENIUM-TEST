@@ -18,10 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "champ", catalog = "project")
 public class Champ implements java.io.Serializable {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private Integer idChamp;
 	private Etape etape;
@@ -32,19 +29,18 @@ public class Champ implements java.io.Serializable {
 	private String valeurSelecteur;
 	private String texte;
 	private String contexte;
+	private String libelle;
 
 	public Champ() {
 	}
 
-	public Champ(Action action, TypeChamp typeChamp, Selecteur selecteur) {
-		this.action = action;
-		this.typeChamp = typeChamp;
-		this.selecteur = selecteur;
-	}
 
-	public Champ(Etape etape, Menu menu, Action action, TypeChamp typeChamp,
-			Selecteur selecteur, String valeurSelecteur, String texte,
-			String contexte) {
+	
+
+	public Champ(Integer idChamp, Etape etape, Menu menu, Action action, TypeChamp typeChamp, Selecteur selecteur,
+			String valeurSelecteur, String texte, String contexte, String libelle) {
+		super();
+		this.idChamp = idChamp;
 		this.etape = etape;
 		this.menu = menu;
 		this.action = action;
@@ -53,6 +49,24 @@ public class Champ implements java.io.Serializable {
 		this.valeurSelecteur = valeurSelecteur;
 		this.texte = texte;
 		this.contexte = contexte;
+		this.libelle = libelle;
+	}
+
+
+
+
+	public Champ(Etape etape, Menu menu, Action action, TypeChamp typeChamp, Selecteur selecteur,
+			String valeurSelecteur, String texte, String contexte, String libelle) {
+		super();
+		this.etape = etape;
+		this.menu = menu;
+		this.action = action;
+		this.typeChamp = typeChamp;
+		this.selecteur = selecteur;
+		this.valeurSelecteur = valeurSelecteur;
+		this.texte = texte;
+		this.contexte = contexte;
+		this.libelle = libelle;
 	}
 
 	@Id
@@ -142,5 +156,14 @@ public class Champ implements java.io.Serializable {
 	public void setContexte(String contexte) {
 		this.contexte = contexte;
 	}
+
+	@Column(name = "libelle", length = 15)
+	public String getLibelle() {
+		return libelle;
+	}
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}	
 
 }

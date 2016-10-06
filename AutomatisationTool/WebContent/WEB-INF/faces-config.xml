@@ -62,21 +62,22 @@
 			<from-outcome>new</from-outcome>
 			<to-view-id>/pages/testNew.jsp</to-view-id>
 		</navigation-case>
-		</navigation-rule>
-
-
-	<navigation-rule>
-		<from-view-id>/pages/success3.jsp</from-view-id>
-		<navigation-case>
-			<from-outcome>table</from-outcome>
-			<to-view-id>/pages/table.jsp</to-view-id>
+			<navigation-case>
+			<from-outcome>display</from-outcome>
+			<to-view-id>/pages/tableTests.jsp</to-view-id>
 		</navigation-case>
 		</navigation-rule>
 
+
+	
    <navigation-rule>
 		<from-view-id>/pages/gestionChamp.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>table</from-outcome>
+			<to-view-id>/pages/table.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>display</from-outcome>
 			<to-view-id>/pages/table.jsp</to-view-id>
 		</navigation-case>
 		<navigation-case>
@@ -145,6 +146,7 @@
 			<to-view-id>/pages/gestionTest.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
 	<navigation-rule>
 		<from-view-id>/pages/table.jsp</from-view-id>
 		<navigation-case>

@@ -23,8 +23,14 @@
 				</h:commandLink>
 			</div>
 			
+				
 			<div class="form-style-2-heading">Modification du champ</div>
-	
+								<br/><br/>
+			
+		<h:outputLabel value="libelle" /><span id="s10">	    
+		<h:inputText value="#{champController.champ.libelle}"/></span>
+					<br/><br/>
+		
 		<h:outputLabel  value="Module  "   /> <span id="s1">
 		<h:selectOneMenu   value="#{champController.champ.etape.module.idModule}" >
 				<f:selectItems   value="#{champController.selectItemsModule}" />

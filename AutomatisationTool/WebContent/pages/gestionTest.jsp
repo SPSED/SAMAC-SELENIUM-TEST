@@ -29,7 +29,6 @@
 		   <h:outputLabel value="Etape  " /><span id="s2">
 			<h:selectOneMenu   value="#{testController.numetape}" id="listeEtapes">
 				<f:selectItems   value="#{testController.selectItemsEtape}" />		
-	   <a4j:support event="onchange" reRender="listeMenus" action="#{testController.chargerMenu}"/>
 		</h:selectOneMenu></span>
 		
 			
@@ -41,6 +40,9 @@
 					<br/><br/><br/>
 		<span id="submit">
 	    <h:commandButton value="Rechercher" action="#{testController.find}"/>
+	    <span id="l"> </span>
+	    <h:commandButton value="Afficher tout" action="#{testController.display}"/>
+		
 	    </span>
 	</h:form>
                     

@@ -5,6 +5,7 @@ import java.util.List;
 import ma.mpm.gov.automatiosationtool.dao.Interface.ChampDao;
 import ma.mpm.gov.automatiosationtool.model.Champ;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -33,6 +34,20 @@ public class ChampDaoImpl implements ChampDao {
 		 
 			return lesChamps;
 			}
+     @SuppressWarnings("unchecked")
+	public List<Champ> findBy(int i){
+         List<Champ> lesChamps = factory.getCurrentSession().createQuery("from Champ c where c.menu.idMenu=:var").setParameter("var",i).list();
+         return lesChamps;
+        							  }
+     
+     public void increase(int i){
+   
+   Query query=factory.getCurrentSession().createQuery("UPDATE Champ c set c.idChamp=c.idChamp+1 WHERE c.idChamp>= :var ORDER BY c.idChamp DESC");
+     query.setParameter("var",i+1).list();   		
+     int result=query.executeUpdate();
+     System.out.println(result);
+     							}
+     
 	 @SuppressWarnings("unchecked")
 	 public List<Champ> findAll(){
 		 String hql = "from Champ";
@@ -47,9 +62,9 @@ public class ChampDaoImpl implements ChampDao {
 		StringBuilder query = new StringBuilder("from Champ c where 1=1");
 
 		if (texte != null && !texte.isEmpty()) {
-			query.append(" and c.texte ='" + texte + "'");
+			query.append(" and c.libelle ='" + texte + "'");
 		}
-		if (menu != null && !"pas de menu".equals(menu)) {
+		if (menu != null) {
 
 			query.append(" and c.menu.nomMenu ='" + menu + "'");
 		}
@@ -83,7 +98,7 @@ public class ChampDaoImpl implements ChampDao {
 		  } 
 		  return success ;
 		}
-	 
+	
 	 
 	 
 

@@ -34,27 +34,50 @@ public class TestDaoImpl implements TestDao{
 	            return theTests;
 	            }
 	     
-		 public List<Test> findBy(String module, String etape, String test){
-			 StringBuilder query = new StringBuilder("from Test t where 1=1");
+		/* public List<Test> findBy(String module, String etape, String test){
+			 StringBuilder query = new StringBuilder("select Test t join TestEtape e where t=e.test and 1=1");
 
-				if (test != null && !test.isEmpty()) {
+			 if (test != null && !test.isEmpty()) {
 					query.append(" and t.nomTest ='" + test + "'");
 				}
-				 if (etape != null) {
-					query.append(" and test.nomTest= c..nomEtape ='" + etape + "'");
+			 
+			 if (etape != null) { 
+					query.append(" and e.etape.nomEtape ='" + etape + "'");
 				}
 
 				else if (module != null) {
-					query.append(" and c.etape.module.nomModule ='" + module + "'");
+					query.append(" and e.etape.module.nomModule ='" + module + "'");
 				}
-
+	
 				query.append(" order by idTest");
 				@SuppressWarnings("unchecked")
 				List<Test> result = factory.getCurrentSession().createQuery(query.toString()).list();
 
 				return result;
-		 }
- 
+		 }*/
+			public List<Test> findBy(String module, String etape, String test){
+				 StringBuilder query = new StringBuilder("from TestEtape e inner join e.test where 1=1");
+
+				 if (test != null && !test.isEmpty()) {
+						query.append(" and e.test.nomTest ='" + test + "'");
+					}
+				 
+				 if (etape != null) { 
+						query.append(" and e.etape.nomEtape ='" + etape + "'");
+					}
+
+					else if (module != null) {
+						query.append(" and e.etape.module.nomModule ='" + module + "'");
+					}
+		
+					query.append(" order by e.test.idTest");
+					
+					@SuppressWarnings("unchecked")
+					List<Test> result = (List<Test>)factory.getCurrentSession().createQuery(query.toString()).list();
+
+					return result;
+			 }
+
 	     public void delete(Test a)
 	     {
 	      factory.getCurrentSession().delete(a);

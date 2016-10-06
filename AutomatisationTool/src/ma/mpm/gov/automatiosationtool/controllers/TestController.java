@@ -18,9 +18,7 @@ import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionEtape;
 import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionModule;
 import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionTest;
 import ma.mpm.gov.automatiosationtool.gestion.Interface.GestionTestEtape;
-import ma.mpm.gov.automatiosationtool.model.Champ;
 import ma.mpm.gov.automatiosationtool.model.Etape;
-import ma.mpm.gov.automatiosationtool.model.Menu;
 import ma.mpm.gov.automatiosationtool.model.Module;
 import ma.mpm.gov.automatiosationtool.model.Test;
 import ma.mpm.gov.automatiosationtool.model.TestEtape;
@@ -54,7 +52,7 @@ public class TestController {
 	private String nometape;
 	
 	private Test test;
-	
+	private TestEtape testEtape;
 	private List<Module> listModules;
 	private List<Etape> listEtapes;
 	private List<Test> listTests;
@@ -70,7 +68,7 @@ public class TestController {
 		listTests=gTest.findAll();
 		initSelectItems();
 		initSelectItems2();
-
+		
 	}
 	public void initSelectItems() {
 		for(int i=0; i < listModules.size() ; i++){
@@ -91,12 +89,20 @@ public class TestController {
 		initSelectItems2();
 	}
 	
+	
+	
 	public String find (){
     	nommodule=gModule.getById(idmodule).getNomModule();
     	nometape=gEtape.getById(numetape).getNomEtape();
     	listTests=gTest.findBy(nommodule, nometape, nomtest);
     	return "table";
     }
+	
+	public String display(){
+		listTests=gTest.findAll();
+		return "display";
+		
+	}
 
 	   public String neww(){
 	    	return "new";
@@ -111,8 +117,10 @@ public class TestController {
 			 return "test";
 		}
 	   public String edit(){
-		   
+		    test=testEtape.getTest();
+		    System.out.println(testEtape.getEtape().getNomEtape());
 			gTest.saveorupdate(test);
+			gTestEtape.saveorupdate(testEtape);
 			listTests=gTest.findAll();
 			return "table";
 			
@@ -120,14 +128,16 @@ public class TestController {
 	   
 	   public String edit(Test t){
 			test=t;
-			
-				
-	/*			listEtapes=gEtape.findAll(champ.getEtape().getModule().getIdModule());
-				initSelectItems2();*/
-			
+			testEtape=gTestEtape.getBy(t);
+			listEtapes=gEtape.findAll(testEtape.getEtape().getModule().getIdModule());
+			initSelectItems2();
 			return "edit";
 		}
-	   
+	   public void chargerEtape2(){
+			selectItemsEtape=new ArrayList<SelectItem>(); 
+			listEtapes=gEtape.findAll(testEtape.getEtape().getModule().getIdModule());
+			initSelectItems2();
+		}
 	   public String add(){
 		   		   
 		   Date dNow = new Date( );
@@ -277,6 +287,12 @@ public class TestController {
 	}
 	public void setNometape(String nometape) {
 		this.nometape = nometape;
+	}
+	public TestEtape getTestEtape() {
+		return testEtape;
+	}
+	public void setTestEtape(TestEtape testEtape) {
+		this.testEtape = testEtape;
 	}
 	
 	

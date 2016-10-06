@@ -13,5 +13,8 @@ public interface GestionChamp{
 	public List<Champ> findAll();
 	public void delete(Champ a);
 	public boolean saveorupdate(Champ a);
-	public List<Champ> findBy(String module,String etape,String menu,String texte);
+	public List<Champ> findBy(String module,String etape,String menu,String libelle);
+	public List<Champ> findBy(int i);
+    public void increase(int i);
+	
 }

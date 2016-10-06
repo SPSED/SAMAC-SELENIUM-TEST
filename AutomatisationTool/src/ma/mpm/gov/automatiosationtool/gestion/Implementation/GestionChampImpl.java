@@ -39,10 +39,16 @@ public class GestionChampImpl implements GestionChamp{
      public void delete(Champ a){
         act.delete(a);
     }
-	 public List<Champ> findBy(String module,String etape,String menu,String texte){
-    	 return act.findBy(module, etape, menu, texte);
+	 public List<Champ> findBy(String module,String etape,String menu,String libelle){
+    	 return act.findBy(module, etape, menu, libelle);
      }
      
-  
+	 public List<Champ> findBy(int i){
+		 return act.findBy(i);
+	 }
+     public void increase(int i){
+    	 act.increase(i);
+     }
+
   		 
  }             
